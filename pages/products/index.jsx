@@ -13,16 +13,24 @@ const AllProducts = ({products}) => {
   return (
 	<div>
     <h1>All Product</h1>
-    {products.map((product) => {
-        const {image, id , title, category, price, rating} = product
-        return (
-          <div key={id}>
-            <img src={image} alt="" 
-            className="h-40 "/>
-            <p className='text-sm  text-gray-500 underline-none' >{title}</p>
-          </div>
-        )
-      })}
+    <div className='sm:bg-red-200 sm:grid grid-cols-2 lg:grid-cols-3'>
+      {products.map((product) => {
+          const {image, id , title, category, description, price, rating} = product
+          return (
+            <div key={id} className="my-2 p-2 shadow-md text-left bg-white rounded-md w-5/6 mx-auto text-gray-700 cursor-pointer" 
+            onClick={() => console.log(id)}>
+              <img src={image} alt="" 
+              className="h-40 my-1 mx-auto"/>
+              <h1 className='font-poppins' >{title}</h1>
+              <article className='text-xs'>
+                <p >{description}</p>
+                <p >Category: <span className='text-red-400'>{category}</span></p>
+                <p >Price: <span className='text-red-400 font-semibold text-l'>{price}$</span></p>
+              </article>
+            </div>
+          )
+        })}
+    </div>
   </div>
   )
 }

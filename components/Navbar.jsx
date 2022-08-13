@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
 	<nav className=" relative">
-    <h1 className="text-red-400 font-fancy py-3 text-lg border-l text-center ">Fake Store</h1>
+    <h1 className="text-red-400 font-fancy py-3 text-lg border-l text-center shadow-sm ">Fake Store</h1>
     <FiMenu 
     className="absolute top-3 text-2xl right-2 cursor-pointer text-gray-700 sm:hidden"
     onClick={() => setOpenNav(!openNav)}/>
