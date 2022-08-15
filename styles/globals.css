@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .openNav{
-	@apply  bg-white font-poppins leading-8  text-center text-gray-700 shadow-md  w-full h-80 absolute transition ease-in-out duration-100 z-[100];
+	@apply  bg-gray-100 font-poppins leading-8  text-center text-gray-700 shadow-md  w-full  absolute transition ease-in-out duration-500 z-[100] top-[200px];
 }
 
 .closeNav{
-	@apply  font-poppins leading-8  text-center text-gray-700 shadow-md w-full absolute h-0 opacity-0 transition ease-in-out duration-100 z-[100] hidden;
+	@apply  font-poppins leading-8  text-center text-gray-700 shadow-md w-full absolute   transition ease-in-out duration-500 z-[100] top-[-200px];
 }
