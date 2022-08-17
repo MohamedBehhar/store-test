@@ -3,8 +3,16 @@ import { FiMenu } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoIosArrowDown} from 'react-icons/io'
 import React, { useState, useRef, useEffect} from 'react';
+import { useContext } from "react";
+import DataContext from "../context/state";
 
 const Navbar = () => {
+  const {
+    openNav, 
+    setOpenNav,
+    showProducts,
+    setShowProducts} = useContext(DataContext);
+
   const subMenu = [
     {name: "All"},
     {name: "Men's clothing"},
@@ -12,8 +20,7 @@ const Navbar = () => {
     {name: "Jewelery"},
     {name: "Electronics"},
   ]
-  const [openNav, setOpenNav] = useState(false);
-  const [showProducts, setShowProducts] = useState(false);
+ 
 
 
 

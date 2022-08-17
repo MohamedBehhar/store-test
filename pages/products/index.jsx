@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
+import { useContext } from 'react';
+import { useState } from 'react';
 
 export const getStaticProps = async() => {
   const res = await fetch('https://fakestoreapi.com/products')
@@ -10,7 +12,10 @@ export const getStaticProps = async() => {
   }
 }
 
+
+
 const AllProducts = ({products}) => {
+  const [filtredProducts, setFiltredProducts] = useState({products})
   return (
 	<div>
     <h1>All Product</h1>
