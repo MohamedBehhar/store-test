@@ -13,18 +13,7 @@ const Navbar = () => {
     showProducts,
     setShowProducts} = useContext(DataContext);
 
-  const subMenu = [
-    {name: "All"},
-    {name: "Men's clothing"},
-    {name: "Women's clothing"},
-    {name: "Jewelery"},
-    {name: "Electronics"},
-  ]
- 
-
-
-
-  return (
+    return (
 	<nav className=" relative">
     <Link href={"/"}>
       <div className="flex justify-center  z-[100]"  >
@@ -45,21 +34,10 @@ const Navbar = () => {
       <li >
         <Link href="/products" >
           <a  className={`${openNav ? "hidden" : ""}`}  
-          onClick={() => setShowProducts(!showProducts)}>Products 
-            <span className="inline-block">
-              <IoIosArrowDown className={`transition-all ease-in duration-200 ${showProducts? "rotate-180": ""}`} />
-            </span>
+          onClick={() => setOpenNav(!openNav)}>Products 
+
           </a>
         </Link>
-        <ul className={`${showProducts? " h-0 transition-all ease-in duration-300 opacity-0" : "h-[160px] transition-all ease-in duration-300 opacity-100"}`}>
-          {subMenu.map(el => (
-            <li key={el.name} className={`pl-4 text-s text-gray-600 cursor-pointer ${showProducts? "hidden" : ""}`}>
-              <a onClick={() => setOpenNav(!openNav)}>
-                {el.name}
-              </a>
-            </li>
-          ))}         
-          </ul>
       </li>
       <li>
         <Link href="/contact">
